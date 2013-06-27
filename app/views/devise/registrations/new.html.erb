@@ -1,0 +1,52 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :email %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.email_field :email, :autofocus => true %>
+    </div>
+</div>
+<div class="row">
+  <div class="small-3 columns">
+    <%= f.label :fname, 'First Name' %>
+  </div>
+  <div class="small-9 columns">
+    <%= f.text_field :fname %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-3 columns">
+    <%= f.label :lname, 'Last Name' %>
+  </div>
+  <div class="small-9 columns">
+    <%= f.text_field :lname %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-3 columns">
+    <%= f.label :password %>
+  </div>
+  <div class="small-9 columns">
+    <%= f.password_field :password %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-3 columns">
+    <%= f.label :password_confirmation %>
+  </div>
+  <div class="small-9 columns">
+    <%= f.password_field :password_confirmation %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-9 offset-3 columns">
+    <%= f.submit "Sign up" %>
+  </div>
+</div>
+<% end %>
+
+<%= render "devise/shared/links" %>

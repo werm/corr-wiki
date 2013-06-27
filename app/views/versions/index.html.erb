@@ -1,0 +1,37 @@
+<h1>Listing versions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item type</th>
+      <th>Item</th>
+      <th>Event</th>
+      <th>Whodunnit</th>
+      <th>Text</th>
+      <th>Created at</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @versions.each do |version| %>
+      <tr>
+        <td><%= version.item_type %></td>
+        <td><%= version.item_id %></td>
+        <td><%= version.event %></td>
+        <td><%= version.whodunnit %></td>
+        <td><%= version.text %></td>
+        <td><%= version.created_at %></td>
+        <td><%= link_to 'Show', version %></td>
+        <td><%= link_to 'Edit', edit_version_path(version) %></td>
+        <td><%= link_to 'Destroy', version, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Version', new_version_path %>

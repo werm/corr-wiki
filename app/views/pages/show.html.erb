@@ -1,0 +1,39 @@
+<h3 class="title">
+  <%= @page.title %>
+</h3>
+<p class="page-body">
+  <%= markdown(@page.body) %>
+</p>
+<div id="wikiInfo"></div>
+
+<div class="meta-info">
+  <a href="#" id="infoToggle">+ Page Info</a>
+  <ul>
+    <li class="author">
+      <strong>Author: </strong>
+      <%= @page.user.fname %> <%= @page.user.lname %>
+    </li>
+    <li class="revision">
+      <strong>Revision:</strong>
+      <%= @page.revision %>
+    <% unless @page.updated_at.nil? %>
+      <li class="last-edit">
+        <strong>Last Edited: </strong>
+          <%= @page.updated_at.strftime('%m/%d/%Y')  %>
+      </li>
+    <% end %>
+    <li class="created">
+      <strong>Created: </strong>
+      <% unless @page.created_at.nil? %>
+        <%= @page.created_at.strftime('%m/%d/%Y')  %>
+      <% end %>
+    </li>
+  </ul>
+</div>
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>
+
+<% content_for :js_include do %>
+  <%= javascript_include_tag 'pages' %>
+<% end %>

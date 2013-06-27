@@ -1,0 +1,68 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+    <div class="row">
+      <div class="small-3 columns">
+        <%= f.label :email %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.email_field :email, :autofocus => true %>
+      </div>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+  </div>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :fname, 'First Name' %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.text_field :fname %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :lname, 'Last Name' %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.text_field :lname %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :password %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.password_field :password, title: 'leave blank if you don\'t want to change it', :data => { tooltip: true } %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-3 columns">
+        <%= f.label :password_confirmation %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.password_field :password_confirmation, title: 'we need your current password to confirm your changes', :data => { tooltip: true } %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :current_password %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.password_field :current_password %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-9 offset-3 columns">
+      <%= f.submit 'Update', class: "button radius" %>
+    </div>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
+<%= link_to "Back", :back %>

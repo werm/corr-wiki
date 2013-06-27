@@ -1,0 +1,61 @@
+<% content_for :js_include do %>
+  <%= javascript_include_tag 'pages/form' %>
+<% end %>
+<%= form_for(@page) do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+  </div>
+<div class="row">
+  <div class="large-6 columns">
+    <%= f.label :body %>
+    <div class="row">
+      <div class="large-6 columns">
+        <small>You can use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a> to enter text.</small>
+      </div>
+    </div>
+    <div id="toolbar" class="wmd-toolbar"></div>
+  </div>
+</div>
+<div class="row">
+    <div class="large-6 columns">
+    <%= f.text_area :body, class: "wmd-input" %>
+    </div>
+    <div class="large-6 columns">
+    <div id="preview" class="wmd-preview">
+      <h6 class="subheader">Preview</h6>
+    </div>
+  </div>
+  </div>
+<div class="row">
+  <div class="large-6 columns">
+    <%= f.label :tag_list, "Tags <small>separated by commas</small>".html_safe %>
+    <%= f.text_field :tag_list %>
+  </div>
+</div>
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.submit 'Submit', class: "button radius" %>
+    </div>
+  </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <% if params[:action] == "new" %>
+    <%= f.hidden_field :revision, value: @page.revision = 1 %>
+  <% else %>
+    <%= f.hidden_field :revision, value: @page.revision += 1 %>
+  <% end %>
+<% end %>

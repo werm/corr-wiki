@@ -1,0 +1,14 @@
+<h1>Pages</h1>
+
+<div id="pages">
+  <div class="row">
+  <% @pages.each do |page| %>
+  <div class="large-6 columns">
+    <h3><%= link_to page.title, page %></h3>
+    <%= page.body %>
+    <p>Tags: <%= page.tag_list %></p>
+    <p><%= link_to "Edit Page", edit_page_path(page) %></p>
+  </div>
+  <% end %>
+</div>
+</div>

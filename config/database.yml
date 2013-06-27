@@ -1,0 +1,25 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: corrwiki_development
+  pool: 5
+  username: corrdev
+  password: corrdev
+  socket: /tmp/mysql.sock
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: corrwiki_test
+  pool: 5
+  username: corrdev
+  password: corrdev
+  socket: /tmp/mysql.sock
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: corrwiki_production
+  pool: 5
+  username: corrdev
+  password: corrdev
+  socket: /tmp/mysql.sock

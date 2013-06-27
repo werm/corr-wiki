@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item type:</strong>
+  <%= @version.item_type %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @version.item_id %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @version.event %>
+</p>
+
+<p>
+  <strong>Whodunnit:</strong>
+  <%= @version.whodunnit %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @version.text %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @version.created_at %>
+</p>
+
+<%= link_to 'Edit', edit_version_path(@version) %> |
+<%= link_to 'Back', versions_path %>
