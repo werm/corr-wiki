@@ -5,8 +5,9 @@
   <% @pages.each do |page| %>
   <div class="large-6 columns">
     <h3><%= link_to page.title, page %></h3>
-    <%= page.body %>
-    <p>Tags: <%= page.tag_list %></p>
+    <%= markdown(page.body) %>
+    <%#= page.body.html_safe %>
+    <p>Category: <%= page.category %></p>
     <p><%= link_to "Edit Page", edit_page_path(page) %></p>
   </div>
   <% end %>

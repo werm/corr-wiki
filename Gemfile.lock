@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/airblade/paper_trail.git
+  revision: e76fb279eb5f0bbfa481f16b820a075419ab3d3f
+  branch: rails4
+  specs:
+    paper_trail (2.7.2)
+      activerecord (>= 4.0.0.beta, < 5.0)
+      railties (>= 4.0.0.beta, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -33,6 +42,7 @@ GEM
     blankslate (3.1.2)
     builder (3.1.4)
     choice (0.1.6)
+    coderay (1.0.9)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -67,12 +77,17 @@ GEM
     markdown-rails (0.2.1)
       rails
       rdiscount (>= 1.6.8, < 2.0)
+    method_source (0.8.1)
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
     mysql2 (0.3.11)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     pygments.rb (0.2.13)
       rubypython (~> 0.5.3)
     rack (1.5.2)
@@ -114,6 +129,7 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    slop (3.4.5)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -157,6 +173,8 @@ DEPENDENCIES
   jquery-rails
   markdown-rails
   mysql2
+  paper_trail!
+  pry
   pygments.rb (~> 0.2.13)
   rails (= 4.0.0)
   rails-erd

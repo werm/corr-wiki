@@ -1,5 +1,5 @@
 @import "font-awesome";
-@import "syntax";
+// @import "syntax";
 
 .wmd-blockquote, .wmd-h, .wmd-hr, .wmd-spacer { display: none; } 
 
@@ -33,4 +33,17 @@
 
 #page_body {
   min-height: 20em;
+}
+
+.meta-info ul {
+  display: none;
+}
+
+ins {
+    background-color: #c6ffc6;
+    text-decoration: none;
+}
+
+del {
+    background-color: #ffc6c6;
 }

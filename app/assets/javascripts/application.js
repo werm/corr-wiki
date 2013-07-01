@@ -15,4 +15,6 @@
 //= require foundation
 //= require turbolinks
 //= require autogrow
+//= require diff_match_patch
+//= require jsDiff
 //= require app

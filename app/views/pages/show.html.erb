@@ -6,9 +6,11 @@
 </p>
 <div id="wikiInfo"></div>
 
+<div class="row">
+  <div class="large-6 columns">
 <div class="meta-info">
   <a href="#" id="infoToggle">+ Page Info</a>
-  <ul>
+  <ul class="no-bullet">
     <li class="author">
       <strong>Author: </strong>
       <%= @page.user.fname %> <%= @page.user.lname %>
@@ -16,6 +18,7 @@
     <li class="revision">
       <strong>Revision:</strong>
       <%= @page.revision %>
+    </li>
     <% unless @page.updated_at.nil? %>
       <li class="last-edit">
         <strong>Last Edited: </strong>
@@ -30,10 +33,20 @@
     </li>
   </ul>
 </div>
-
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
-
+</div>
+<div class="large-6 columns">
+  <%= link_to 'Edit', edit_page_path(@page) %> |
+  <%= link_to 'Back', pages_path %>
+</div>
+</div>
+<hr>
+<h3 class="changes">Changes</h3>
+<div class="row" id="diffs">
+    <div id="latest_text" class="changed large-4 columns"></div>
+    <div id="previous_text" class="original large-4 columns"></div>
+    <div id="changes" class="diff large-4 columns"></div>
+</div>
+<span id="page_id" class="visuallyhidden"><%= @page.id %></span>
 <% content_for :js_include do %>
   <%= javascript_include_tag 'pages' %>
 <% end %>

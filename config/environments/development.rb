@@ -29,4 +29,12 @@ Wiki::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   
+  silence_warnings do
+    begin
+      require 'pry'
+      IRB = Pry
+    rescue LoadError
+    end
+  end
+  
 end

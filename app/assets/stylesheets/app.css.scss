@@ -1,3 +1,21 @@
-#page_body {
-  min-height: 20em;
+@import 'http://fonts.googleapis.com/css?family=Droid+Sans+Mono';
+
+$linenos: #999;
+
+.visuallyhidden { display: none; }
+
+pre > code {
+    white-space: pre;
+    margin-top: -1.00em;
+    display: block;
+    overflow: scroll;
+}
+
+pre { 
+  font-family: 'Droid Sans Mono', monospace; 
+  font-size: 12px;
+  line-height: 1.6;
+  .highlighttable .linenos .linenodiv pre {
+    color: $linenos;
+  }
 }

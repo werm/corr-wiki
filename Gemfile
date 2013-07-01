@@ -17,6 +17,8 @@ gem 'redcarpet'
 gem "pygments.rb", "~> 0.2.13"
 gem 'markdown-rails'
 gem 'font-awesome-rails'
+gem 'paper_trail', :git => 'https://github.com/airblade/paper_trail.git', :branch => 'rails4'
+gem 'pry'
 group :doc do
   gem 'sdoc', require: false
 end

@@ -12,4 +12,5 @@
  *= require wmd
  *= require pygments
  *= require foundation_and_overrides
+ *= require app
  */

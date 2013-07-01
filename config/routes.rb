@@ -4,8 +4,10 @@ Wiki::Application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy' 
   end
 
-  root :to => 'home#index'
-  resources :pages
-  resources :versions
+  post "versions/:id/revert" => "versions#revert", :as => "revert_version"
+
+  resources :pages  
   get '/sidebar/pages' => 'pages#sidebar_pages'
+
+  root :to => 'home#index'
 end

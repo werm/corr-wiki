@@ -17,6 +17,7 @@ $(function() {
       $(this).text($(this).text() == '+ Page Info' ? '- Page Info' : '+ Page Info');
     })
     $('textarea').autogrow()
+    $('.linenos').css('color','#aaaaaa')
     $(document).foundation();
   });
 });
